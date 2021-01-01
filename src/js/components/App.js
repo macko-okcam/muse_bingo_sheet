@@ -8,6 +8,7 @@ import img from './thumbs_up.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../scss/main.scss';
 import GameBoard from "./GameBoard";
+import BingoSheet from "./BingoSheet";
 import GameSettings from "./GameSettings";
 import GameControls from "./GameControls";
 
@@ -27,7 +28,8 @@ class App extends Component {
 
       <>
 
-        <GameBoard></GameBoard>
+        <BingoSheet></BingoSheet>
+        {/* <GameBoard></GameBoard> */}
         {/* <GameControls></GameControls>
         <GameSettings></GameSettings> */}
         <h1>This is where stuff will happen. Fun!</h1>

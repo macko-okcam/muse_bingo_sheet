@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Cell from "./Cell";
+// import Cell from "./Cell";
+import BingoSquare from "./BingoSquare";
+
 
 
 const mapStateToProps = state => {
@@ -12,7 +14,7 @@ const mapStateToProps = state => {
 
 function mapDispatchToProps(dispatch) {
   return {
-    rebuildBingoSheet: boardDimensions => dispatch(rebuildBingoSheet(boardDimensions))
+    // rebuildBingoSheet: boardDimensions => dispatch(rebuildBingoSheet(boardDimensions))
   };
 }
 
@@ -20,14 +22,14 @@ class ConnectedBingoSheet extends Component {
   constructor(props) {
     super(props);
 
-    this.props.rebuildBingoSheet({columns:this.props.columns, rows:this.props.rows}) 
+    // this.props.rebuildBingoSheet({columns:this.props.columns, rows:this.props.rows}) 
 
   }
 
   renderSquare(i) {
     
     
-    return <Cell id={i} key={"cell" + i}></Cell>;
+    return <BingoSquare id={i} key={"cell" + i}></BingoSquare>;
   }
 
   renderRow(min, max) {

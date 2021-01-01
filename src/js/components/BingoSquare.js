@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import classNames from "classnames";
-import { clickCell } from "../actions";
+// import { clickCell } from "../actions";
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -12,15 +12,15 @@ const mapStateToProps = (state, ownProps) => {
 
 function mapDispatchToProps(dispatch) {
   return {
-    clickCell: cellState => dispatch(clickCell(cellState))
+    // clickCell: cellState => dispatch(clickCell(cellState))
   };
 }
 
-class ConnectedCell extends Component {
+class ConnectedBingoSquare extends Component {
   constructor(props) {
     super(props);
 
-    this.handleClick = this.handleClick.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(id) {
@@ -34,12 +34,16 @@ class ConnectedCell extends Component {
               className={classNames({square: true, live_cell: this.props.isAlive})} 
               onClick={this.handleClick}>
         {/* TODO */}
+        <svg height="100%" width="100%">
+  <circle cx="50%" cy="50%" r="50%"  />
+</svg>
       </button>
+      
     );
   }
 
 }
 
-const Cell = connect(mapStateToProps, mapDispatchToProps)(ConnectedCell);
+const BingoSquare = connect(mapStateToProps, mapDispatchToProps)(ConnectedBingoSquare);
 
-export default Cell;
+export default BingoSquare;
