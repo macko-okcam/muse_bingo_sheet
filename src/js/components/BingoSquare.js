@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import classNames from "classnames";
-// import { clickCell } from "../actions";
+import { clickCell } from "../actions";
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 
 function mapDispatchToProps(dispatch) {
   return {
-    // clickCell: cellState => dispatch(clickCell(cellState))
+    clickCell: cellState => dispatch(clickCell(cellState))
   };
 }
 
@@ -20,11 +20,11 @@ class ConnectedBingoSquare extends Component {
   constructor(props) {
     super(props);
 
-    // this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(id) {
-       
+     console.log(this.props.id);  
      this.props.clickCell( {index: this.props.id, isAlive: !this.props.isAlive} )
   }
 
@@ -32,11 +32,13 @@ class ConnectedBingoSquare extends Component {
     return (
       <button id={this.props.id} 
               className={classNames({square: true, live_cell: this.props.isAlive})} 
-              onClick={this.handleClick}>
+              // onClick={this.handleClick}
+      >
         {/* TODO */}
-        <svg height="100%" width="100%">
-  <circle cx="50%" cy="50%" r="50%"  />
-</svg>
+        {/* <svg height="100%" width="100%">
+          <circle cx="50%" cy="50%" r="50%"  />
+        </svg> */}
+        <div className="profile"></div>
       </button>
       
     );

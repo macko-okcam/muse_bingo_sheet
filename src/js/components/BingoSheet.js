@@ -29,7 +29,7 @@ class ConnectedBingoSheet extends Component {
   renderSquare(i) {
     
     
-    return <BingoSquare id={i} key={"cell" + i}></BingoSquare>;
+    return <BingoSquare id={"cell" + i} key={"cell" + i}></BingoSquare>;
   }
 
   renderRow(min, max) {
