@@ -8,7 +8,6 @@ body {
   }
   
   .board-row:after {
-    width: max-content;
     clear: both;
     content: "";
     display: table;
@@ -20,7 +19,7 @@ body {
   
   .square {
     background: rgb(141, 166, 235);
-    border: 1px solid #999;
+    border: 3px solid black;
     float: left;
     font-size: 24px;
     font-weight: bold;
@@ -64,6 +63,10 @@ body {
     background-size: contain;
     clip-path: circle(48%);
     background-color: rebeccapurple;
+
+    background-color: #00b7ff;
+    background-color: #ffffff;
+  
   }    
 
   #cell12 .profile{
